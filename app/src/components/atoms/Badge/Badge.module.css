@@ -1,0 +1,23 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  letter-spacing: var(--text-body-sm-track);
+  white-space: nowrap;
+}
+.default {
+  background: var(--color-bg-muted);
+  color: var(--color-text-primary);
+}
+.inverse {
+  background: var(--color-surface-glass);
+  color: var(--color-text-inverse-sub);
+}
+.overlay {
+  background: var(--color-surface-overlay);
+  color: var(--color-text-primary);
+  padding: var(--space-1) var(--space-3);
+}

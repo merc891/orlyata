@@ -1,0 +1,67 @@
+@import './tokens/tokens.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line);
+  letter-spacing: var(--text-body-md-track);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-primary);
+  background: var(--color-bg-muted);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* Typography utility classes */
+.typo-display {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-line);
+  letter-spacing: var(--text-display-track);
+  font-weight: var(--font-weight-medium);
+}
+.typo-xl {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-line);
+  letter-spacing: var(--text-xl-track);
+  font-weight: var(--font-weight-medium);
+}
+.typo-lg {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg-size);
+  line-height: var(--text-lg-line);
+  letter-spacing: var(--text-lg-track);
+  font-weight: var(--font-weight-medium);
+}
+.typo-body-lg {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line);
+  letter-spacing: var(--text-body-lg-track);
+  font-weight: var(--font-weight-regular);
+}
+.typo-body-md {
+  font-family: var(--font-body);
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line);
+  letter-spacing: var(--text-body-md-track);
+  font-weight: var(--font-weight-regular);
+}
+.typo-body-sm {
+  font-family: var(--font-body);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  letter-spacing: var(--text-body-sm-track);
+  font-weight: var(--font-weight-regular);
+}

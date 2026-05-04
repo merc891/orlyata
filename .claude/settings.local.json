@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__figma__use_figma",
+      "Bash(curl -s -o /dev/null -w \"/ %{http_code}\\\\n/about %{http_code}\\\\n\" http://localhost:5173/ http://localhost:5173/about)",
+      "Bash(python3)",
+      "mcp__figma__get_metadata",
+      "mcp__figma__search_design_system",
+      "Bash(npm install *)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_wait_for"
+    ]
+  }
+}

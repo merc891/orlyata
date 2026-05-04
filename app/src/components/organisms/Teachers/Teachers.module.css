@@ -1,0 +1,114 @@
+.section {
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-7);
+  align-items: end;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.nav {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-primary);
+  font-size: var(--text-body-md-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.nav:hover { background: var(--color-surface-hover); }
+
+.label {
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-line);
+  letter-spacing: var(--text-display-track);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 3 * var(--space-6)) / 4);
+  gap: var(--space-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-padding: 0;
+  -webkit-overflow-scrolling: touch;
+  /* компенсируем паддинг плашки, чтобы крайние карточки уезжали под её край */
+  margin: 0 calc(-1 * var(--space-7));
+  padding: 0 var(--space-7);
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
+}
+
+.grid > * {
+  scroll-snap-align: start;
+}
+
+/* ─── Tablet 768–1279px ── */
+@media (max-width: 1279px) {
+  .heading {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: var(--text-xl-track);
+  }
+
+  .grid {
+    grid-auto-columns: calc((100% - 2 * var(--space-6)) / 3);
+  }
+}
+
+/* ─── Mobile < 768px ── */
+@media (max-width: 767px) {
+  .section {
+    padding: var(--space-5);
+    gap: var(--space-5);
+  }
+
+  .controls {
+    display: none;
+  }
+
+  .grid {
+    grid-auto-columns: calc(70% - var(--space-6));
+    margin: 0 calc(-1 * var(--space-5));
+    padding: 0 var(--space-5);
+  }
+}

@@ -1,12 +1,18 @@
 @font-face {
   font-family: 'Nagel';
-  src: local('Nagel Medium'), local('Nagel-Medium');
+  src: local('Nagel Medium'), local('Nagel-Medium'),
+       url('../fonts/Nagel_Medium.otf') format('opentype');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Nagel';
-  src: local('Nagel Regular'), local('Nagel-Regular');
+  src: local('Nagel Regular'), local('Nagel-Regular'),
+       url('../fonts/Nagel_Regular.otf') format('opentype');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {

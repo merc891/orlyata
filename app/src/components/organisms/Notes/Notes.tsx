@@ -1,51 +1,52 @@
 import styles from './Notes.module.css';
+import NoteRow from '../../molecules/NoteRow';
 import iconMusic from '../../../assets/icon-music.svg';
-import iconDownload from '../../../assets/icon-download.svg';
+import iconDownload from '../../../assets/download.svg';
 
 const NOTES = [
-  { id: 1,  title: 'Ave Maria',                 composer: 'Ф. Шуберт',       voice: 'Смешанный', href: '#' },
-  { id: 2,  title: 'Богородице Дево, радуйся',  composer: 'С. Рахманинов',   voice: 'Мужской',   href: '#' },
-  { id: 3,  title: 'Вечерняя песня',            composer: 'А. Чернецов',     voice: 'Юноши',     href: '#' },
-  { id: 4,  title: 'Дорогой длинною',           composer: 'Б. Фомин',        voice: 'Тенор',     href: '#' },
-  { id: 5,  title: 'Gaudete',                   composer: 'М. Преториус',    voice: 'Мальчики',  href: '#' },
-  { id: 6,  title: 'Жаворонок',                 composer: 'М. Глинка',       voice: 'Смешанный', href: '#' },
-  { id: 7,  title: 'Калинка',                   composer: 'Русская нар.',    voice: 'Смешанный', href: '#' },
-  { id: 8,  title: 'Колыбельная',               composer: 'И. Карпман',      voice: 'Сопрано',   href: '#' },
-  { id: 9,  title: 'Лакримоза',                 composer: 'В.А. Моцарт',     voice: 'Смешанный', href: '#' },
-  { id: 10, title: 'Многая лета',               composer: 'Д. Бортнянский',  voice: 'Смешанный', href: '#' },
-  { id: 11, title: 'Не шуми ты, рожь',          composer: 'А. Варламов',     voice: 'Баритон',   href: '#' },
-  { id: 12, title: 'О, Фортуна',                composer: 'К. Орф',          voice: 'Смешанный', href: '#' },
-  { id: 13, title: 'Панис Ангеликус',           composer: 'С. Франк',        voice: 'Тенор',     href: '#' },
-  { id: 14, title: 'Плыви, плыви, кораблик',   composer: 'И. Карпман',      voice: 'Мальчики',  href: '#' },
-  { id: 15, title: 'Реквием · Kyrie',           composer: 'В.А. Моцарт',     voice: 'Смешанный', href: '#' },
-  { id: 16, title: 'Серенада',                  composer: 'Ф. Шуберт',       voice: 'Тенор',     href: '#' },
-  { id: 17, title: 'Тихая ночь',                composer: 'Ф. Грубер',       voice: 'Смешанный', href: '#' },
-  { id: 18, title: 'Утро',                      composer: 'Э. Григ',         voice: 'Смешанный', href: '#' },
-  { id: 19, title: 'Херувимская',               composer: 'П. Чесноков',     voice: 'Смешанный', href: '#' },
-  { id: 20, title: 'Школьный вальс',            composer: 'И. Дунаевский',   voice: 'Смешанный', href: '#' },
+  { title: 'Ave Maria',                 author: 'Ф. Шуберт',      category: 'Старший хор' },
+  { title: 'Богородице Дево, радуйся',  author: 'С. Рахманинов',  category: 'Мужской' },
+  { title: 'Вечерняя песня',            author: 'А. Чернецов',    category: 'Юноши' },
+  { title: 'Дорогой длинною',           author: 'Б. Фомин',       category: 'Тенор' },
+  { title: 'Gaudete',                   author: 'М. Преториус',   category: 'Мальчики' },
+  { title: 'Жаворонок',                 author: 'М. Глинка',      category: 'Старший хор' },
+  { title: 'Калинка',                   author: 'Русская нар.',   category: 'Старший хор' },
+  { title: 'Колыбельная',               author: 'И. Карпман',     category: 'Сопрано' },
+  { title: 'Лакримоза',                 author: 'В.А. Моцарт',    category: 'Старший хор' },
+  { title: 'Многая лета',               author: 'Д. Бортнянский', category: 'Старший хор' },
+  { title: 'Не шуми ты, рожь',          author: 'А. Варламов',    category: 'Баритон' },
+  { title: 'О, Фортуна',                author: 'К. Орф',         category: 'Старший хор' },
+  { title: 'Панис Ангеликус',           author: 'С. Франк',       category: 'Тенор' },
+  { title: 'Плыви, плыви, кораблик',    author: 'И. Карпман',     category: 'Мальчики' },
+  { title: 'Реквием · Kyrie',           author: 'В.А. Моцарт',    category: 'Старший хор' },
+  { title: 'Серенада',                  author: 'Ф. Шуберт',      category: 'Тенор' },
+  { title: 'Тихая ночь',                author: 'Ф. Грубер',      category: 'Старший хор' },
+  { title: 'Утро',                      author: 'Э. Григ',        category: 'Старший хор' },
+  { title: 'Херувимская',               author: 'П. Чесноков',    category: 'Старший хор' },
+  { title: 'Школьный вальс',            author: 'И. Дунаевский',  category: 'Старший хор' },
 ];
 
 export default function Notes() {
   return (
     <section className={styles.section}>
-      <div className={styles.sectionHeader}>
-        <p className={styles.heading}>ноты для скачивания</p>
-        <a href="#" className={styles.viewAll}>Вся библиотека ↗</a>
-      </div>
-      <div className={styles.table}>
-        {NOTES.map(note => (
-          <div key={note.id} className={styles.row}>
-            <span className={styles.num}>{String(note.id).padStart(2, '0')}</span>
-            <div className={styles.titleCell}>
-              <img src={iconMusic} alt="" className={styles.musicIcon} />
-              <span className={styles.title}>{note.title}</span>
-            </div>
-            <span className={styles.composer}>{note.composer}</span>
-            <span className={styles.voice}>{note.voice}</span>
-            <a href={note.href} className={styles.download} aria-label="Скачать">
-              <img src={iconDownload} alt="" className={styles.downloadIcon} />
-            </a>
-          </div>
+      <header className={styles.header}>
+        <h2 className={styles.heading}>ноты для скачивания</h2>
+        <a href="#" className={styles.viewAll}>
+          Вся библиотека <span aria-hidden="true">↗</span>
+        </a>
+      </header>
+      <div className={styles.list}>
+        {NOTES.map((note, i) => (
+          <NoteRow
+            key={note.title}
+            index={i + 1}
+            title={note.title}
+            author={note.author}
+            category={note.category}
+            icon={<img src={iconMusic} alt="" className={styles.iconImg} />}
+            action={<img src={iconDownload} alt="" className={styles.iconImg} />}
+            href="#"
+          />
         ))}
       </div>
     </section>

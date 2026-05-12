@@ -1,62 +1,94 @@
 .stats {
+  flex: 0 0 170px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
-.card {
-  background: var(--color-bg-default);
-  border: 1px solid var(--color-border);
+.titleCell,
+.cell {
+  position: relative;
+  height: 170px;
+  background: var(--color-bg-muted);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 220px;
+}
+
+.titleCell {
+  padding: var(--space-4) var(--space-6);
+}
+
+.cell {
+  padding: var(--space-6) var(--space-6) var(--space-4);
 }
 
 .dot {
+  position: absolute;
+  top: var(--space-6);
+  right: var(--space-6);
   width: 6px;
   height: 6px;
   background: var(--color-accent);
   border-radius: var(--radius-full);
 }
 
-.value {
+.title {
+  margin: 0;
   font-family: var(--font-heading);
-  font-size: var(--text-display-size);
-  line-height: var(--text-display-line);
-  letter-spacing: var(--text-display-track);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-line);
+  letter-spacing: var(--text-xl-track);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
+  text-transform: lowercase;
 }
 
-.valueGroup {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
+.subtitle {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body-md-size);
+  line-height: var(--text-body-md-line);
+  letter-spacing: var(--text-body-md-track);
+  color: var(--color-text-secondary);
+}
+
+.value {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: var(--text-xl-size);
+  line-height: var(--text-xl-line);
+  letter-spacing: var(--text-xl-track);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  text-transform: lowercase;
 }
 
 .label {
-  font-size: var(--text-body-md-size);
-  line-height: var(--text-body-md-line);
-  color: var(--color-text-primary);
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg-size);
+  line-height: var(--text-body-lg-line);
+  letter-spacing: var(--text-body-lg-track);
+  color: var(--color-text-secondary);
 }
 
-/* ─── Tablet 768–1279px ── */
+/* Tablet ≤ 1279 */
 @media (max-width: 1279px) {
   .stats {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ─── Mobile < 768px ── */
+/* Mobile < 768 */
 @media (max-width: 767px) {
   .stats {
     grid-template-columns: 1fr;
   }
-  .card {
-    min-height: 120px;
-    padding: var(--space-5);
+  .titleCell,
+  .cell {
+    height: auto;
+    min-height: 140px;
   }
 }

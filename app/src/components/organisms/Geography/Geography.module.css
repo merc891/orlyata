@@ -1,5 +1,5 @@
 .section {
-  background: var(--color-bg-inverse);
+  background: var(--color-surface-card);
   border-radius: var(--radius-lg);
   padding: var(--space-7);
   display: flex;

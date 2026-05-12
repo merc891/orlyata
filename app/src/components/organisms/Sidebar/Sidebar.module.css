@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-bottom: var(--space-4);
+  padding-bottom: var(--space-6);
   position: fixed;
   top: 0;
   left: 0;
@@ -18,44 +18,39 @@
 .header {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-6) var(--space-4);
-  height: 76px;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
 }
 
 .logo {
-  width: 28px;
-  height: 28px;
-  color: var(--color-text-primary);
-  flex-shrink: 0;
-}
-
-.logoName {
-  font-size: var(--text-body-lg-size);
-  line-height: var(--text-body-lg-line);
-  letter-spacing: var(--text-body-lg-track);
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-regular);
-  flex: 1;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius-md);
 }
 
 .closeBtn {
   display: none;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: var(--text-body-lg-size);
-  color: var(--color-text-secondary);
-  padding: var(--space-1);
-  line-height: 1;
+  color: var(--color-text-primary);
+  padding: 0;
   flex-shrink: 0;
+  /* Match hamburger hit area */
+  width: 36px;
+  height: 36px;
 }
 
 .nav {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-0);
   padding: var(--space-2) var(--space-3);
+  margin-top: var(--space-8);
   flex: 1;
 }
 
@@ -91,29 +86,23 @@
 }
 
 .mobileLogo {
-  width: 24px;
-  height: 24px;
-  color: var(--color-text-primary);
-}
-
-.mobileLogoName {
-  font-size: var(--text-body-lg-size);
-  line-height: var(--text-body-lg-line);
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-regular);
+  width: auto;
+  height: 40px;
+  display: block;
 }
 
 .hamburger {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
   padding: var(--space-2);
   width: 36px;
   height: 36px;
+  flex-shrink: 0;
 }
 
 .hamburger span {
@@ -123,12 +112,9 @@
   border-radius: 2px;
 }
 
-/* ─── Backdrop ────────────────────────────────────────────── */
+/* ─── Backdrop (disabled — full-screen overlay doesn't need it) ── */
 .backdrop {
-  position: fixed;
-  inset: 0;
-  background: var(--color-surface-scrim);
-  z-index: var(--z-overlay);
+  display: none;
 }
 
 /* ─── Tablet & Mobile ≤ 1279px ───────────────────────────── */
@@ -138,17 +124,82 @@
   }
 
   .closeBtn {
-    display: block;
+    display: flex;
   }
 
+  /* Full-screen overlay — NO padding on sidebar itself,
+     .header mirrors mobileBar exactly so nothing jumps */
   .sidebar {
-    width: min(300px, 85vw);
-    transform: translateX(-100%);
-    transition: transform var(--transition-base);
+    width: 100vw;
+    height: 100svh;
+    min-height: 100svh;
+    border-right: none;
+    /* no padding here — controlled per-section below */
+    padding: 0;
+    padding-bottom: var(--space-5);
+    background: var(--color-bg-default);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-base);
     z-index: var(--z-modal);
   }
 
   .sidebarOpen {
-    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Header mirrors mobileBar: same height + padding so
+     logo and icon sit at the exact same pixel as before */
+  .header {
+    height: 60px;
+    padding: 0 var(--space-5);
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+  }
+
+  .logo {
+    width: auto;
+    height: 40px;
+    border-radius: 0;
+  }
+
+  .nav {
+    margin-top: var(--space-9);
+    padding: 0 var(--space-5);
+    gap: var(--space-2);
+    flex: 1;
+  }
+
+  .footer {
+    padding: 0 var(--space-5);
+  }
+
+  /* Big nav links */
+  .nav a {
+    height: auto;
+    padding: var(--space-2) 0;
+    border-radius: 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-display-size);
+    line-height: var(--text-display-line);
+    letter-spacing: var(--text-display-track);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+    text-transform: lowercase;
+    background: transparent;
+  }
+  .nav a:hover {
+    background: transparent;
+    opacity: 0.7;
+  }
+}
+
+/* ── Mobile < 768 ────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .nav a {
+    font-size: var(--text-xl-size);
+    line-height: var(--text-xl-line);
+    letter-spacing: var(--text-xl-track);
   }
 }

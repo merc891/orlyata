@@ -1,29 +1,26 @@
 import styles from './Stats.module.css';
-import SectionTitleCard from '../../molecules/SectionTitleCard';
 
 const STATS = [
-  { value: '80+',   label: 'мальчиков и юношей' },
-  { value: '5–17 лет', label: 'возраст учащихся' },
-  { value: '6',     label: 'опытных педагогов' },
-  { value: '15–20', label: 'выступлений в год' },
+  { value: '80+',     label: 'мальчиков и юношей' },
+  { value: '5–17 лет', label: 'возрастной состав' },
+  { value: '6',       label: 'опытных педагогов' },
+  { value: '15–20',   label: 'выступлений в год' },
 ];
 
 export default function Stats() {
   return (
-    <div className={styles.stats}>
-      <SectionTitleCard
-        label="Капелла сегодня"
-        title={<>в цифрах<br />и фактах</>}
-      />
+    <section className={styles.stats}>
+      <div className={styles.titleCell}>
+        <h2 className={styles.title}>в цифрах<br />и фактах</h2>
+        <p className={styles.subtitle}>Капелла сегодня</p>
+      </div>
       {STATS.map(stat => (
-        <div key={stat.value} className={styles.card}>
-          <div className={styles.dot} />
-          <div className={styles.valueGroup}>
-            <p className={styles.value}>{stat.value}</p>
-            <p className={styles.label}>{stat.label}</p>
-          </div>
+        <div key={stat.value} className={styles.cell}>
+          <span className={styles.dot} aria-hidden="true" />
+          <p className={styles.value}>{stat.value}</p>
+          <p className={styles.label}>{stat.label}</p>
         </div>
       ))}
-    </div>
+    </section>
   );
 }

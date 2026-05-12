@@ -6,31 +6,31 @@
 - **Status:** Stable
 
 ## Overview
-Full-width green CTA block with a 1fr/1fr grid: left side has label + heading, right side has subtitle + button.
+Two-column enrolment section: a large Display heading on the left ("Хотите вырастить творческую личность — запишите мальчика в капеллу"), and a four-field application form on the right.
 
 ## Anatomy
 ```
-[.cta green bg]
-  [.left: label + heading]
-  [.right: subtitle + Button]
+.section (grid 1fr / 1fr, gap = --space-12, padding = --space-12, bg = --color-bg-muted)
+  .heading
+    h2 .title (with .titleAccent span for the green clause)
+  form .form
+    .fields (column, gap = --space-4)
+      InputField × 4 (parent / child / birth / phone)
+    Button "отправить заявку"
 ```
 
-## Tokens used
+## Tokens used (key)
 | Property | Token |
 |---|---|
-| `background` | `--color-accent` |
+| `background` | `--color-bg-muted` |
 | `border-radius` | `--radius-lg` |
-| `padding` | `--space-8` |
-| `min-height` | 240px (structural) |
-| `color` (label) | `--color-text-muted-on-light` |
-| `color` (heading) | `--color-text-primary` |
-| `color` (subtitle) | `--color-text-sub-on-light` |
-
-## Code example
-```tsx
-<EnrollCTA />
-```
+| `padding` | `--space-12` |
+| Section grid gap | `--space-12` |
+| Form gap | `--space-6` |
+| Fields gap | `--space-4` |
+| Title `font-size` | `--text-display-size` |
+| `.titleAccent color` | `--color-accent` |
 
 ## Cross-references
-- [Button](Button.md) — primary CTA action
-- [About page](../pages/About.md)
+- [InputField](InputField.md)
+- [Button](Button.md)

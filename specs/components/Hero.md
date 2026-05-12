@@ -6,43 +6,43 @@
 - **Status:** Stable
 
 ## Overview
-Full-height landing hero with video background, word-stacked title, overlay tags, and a 4-column card row at bottom.
-
-**Height:** `calc(100svh - 40px)`.
+Two-column hero on the home page: a tall video tile on the left and a content column on the right with the page heading, an "ближайшие события" sub-header and two [EventCard](EventCard.md) tiles.
 
 ## Anatomy
 ```
-[.image: video bg + gradient overlay]
-  [.heroTopRow: Badge tags (year, city)]
-  [.heroBottom]
-    [.heroText: stacked word spans]
-    [.heroSubtitle]
-[.grid: 4 cards]
-  [.header: title + "view all"]
-  [.card × 3: event cards]
+.hero (grid 1fr / 1fr, gap = --space-4)
+  .video (aspect 798/758)
+    <video> autoplay-muted-loop
+  .column
+    .heading  // hero-size lowercase, 4 lines
+    .eventsHeader (label + viewAll link)
+    .events (2 EventCards, gap = --space-4)
 ```
 
 ## Tokens used (key)
 | Property | Token |
 |---|---|
-| `border-radius` | `--radius-lg` |
-| `background` (image) | `--color-bg-inverse` |
-| Gradient | `--color-black-80` → `--color-black-25` → transparent |
-| `z-index` (overlays) | `--z-above` |
-| `font-size` (hero word) | `--text-hero-size` |
-| `letter-spacing` | `--text-hero-track` |
-| `font-weight` | `--font-weight-regular` |
-| `color` (hero word) | `--color-text-inverse` |
-| `color` (accent word) | `--color-accent` |
-| `color` (subtitle) | `--color-text-inverse-dim` |
-| `color` (label) | `--color-text-inverse-muted` |
-| `background` (tag) | `--color-surface-glass` |
-| `color` (tag) | `--color-text-inverse-sub` |
-| `transition` (card) | `--transition-fast` |
-| `border-color` (card hover) | `--color-surface-glass-hover` |
-| `color` (arrow) | `--color-text-inverse-label` |
-| Card height | 170px (structural) |
-| Grid gap | `--space-3` |
+| Section gap | `--space-4` |
+| Video radius | `--radius-lg` |
+| Heading `font-size` | `--text-hero-size` |
+| Heading `line-height` | `--text-hero-line` |
+| Heading `letter-spacing` | `--text-hero-track` |
+| Heading `font-weight` | `--font-weight-medium` |
+| Events label `font-size` | `--text-display-size` |
+| Link `color` | `--color-text-primary` |
+| Link `transition` | `--transition-fast` |
+| Events row gap | `--space-4` |
+
+## Layout rules
+- Video and right column have a 16 px gap (`--space-4`).
+- The two EventCards have a 16 px gap (`--space-4`).
+- Heading is rendered in lowercase (`text-transform: lowercase`).
+
+## Responsive
+| Breakpoint | Behaviour |
+|---|---|
+| ≤ 1279 | Single column: video stacks above content |
+| < 768 | EventCards stack vertically |
 
 ## Cross-references
-- [Badge](Badge.md) — overlay tags
+- [EventCard](EventCard.md)

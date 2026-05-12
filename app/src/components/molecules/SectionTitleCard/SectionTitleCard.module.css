@@ -13,7 +13,7 @@
 }
 
 .dark {
-  background: var(--color-bg-inverse);
+  background: var(--color-surface-card);
   padding: var(--space-7) var(--space-6) var(--space-7) var(--space-7);
 }
 

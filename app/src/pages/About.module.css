@@ -5,6 +5,7 @@
 .main {
   margin-left: 239px;
   flex: 1;
+  min-width: 0;
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
@@ -28,6 +29,14 @@
     margin-left: 0;
     padding-top: calc(60px + var(--space-5));
   }
+
+  .splitEqual {
+    grid-template-columns: 1fr;
+  }
+
+  .competitionsSlot {
+    height: 400px;
+  }
 }
 
 /* ─── Mobile < 768px ── */
@@ -38,11 +47,7 @@
     gap: var(--space-4);
   }
 
-  .splitEqual {
-    grid-template-columns: 1fr;
-  }
-
   .competitionsSlot {
-    height: 320px;
+    height: 280px;
   }
 }

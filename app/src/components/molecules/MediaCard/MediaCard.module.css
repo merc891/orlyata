@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--text-lg-size);
+  line-height: 1.333;
+  letter-spacing: var(--text-lg-track);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}

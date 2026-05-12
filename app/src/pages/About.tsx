@@ -48,7 +48,6 @@ export default function About() {
           </div>
         </div>
         <Relax />
-        <EnrollCTA />
         <Footer />
       </main>
     </div>

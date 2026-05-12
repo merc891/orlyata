@@ -13,7 +13,7 @@ body {
   letter-spacing: var(--text-body-md-track);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-primary);
-  background: var(--color-bg-muted);
+  background: var(--color-bg-default);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }

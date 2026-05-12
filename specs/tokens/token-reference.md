@@ -18,6 +18,8 @@ Master map of every CSS custom property in `tokens.css`.
 | `--color-neutral-white` | `#ffffff` |
 | `--color-neutral-50` | `#f4f4f5` |
 | `--color-neutral-400` | `#71717a` |
+| `--color-neutral-500` | `#8f8f98` |
+| `--color-neutral-800` | `#343635` |
 | `--color-neutral-950` | `#0a0a0a` |
 
 ### Alpha — white
@@ -38,6 +40,8 @@ Master map of every CSS custom property in `tokens.css`.
 |---|---|
 | `--color-black-5` | `rgba(0,0,0,0.05)` |
 | `--color-black-7` | `rgba(0,0,0,0.07)` |
+| `--color-black-15` | `rgba(0,0,0,0.15)` |
+| `--color-black-20` | `rgba(0,0,0,0.20)` |
 | `--color-black-25` | `rgba(0,0,0,0.25)` |
 | `--color-black-40` | `rgba(0,0,0,0.40)` |
 | `--color-black-50` | `rgba(0,0,0,0.50)` |
@@ -63,6 +67,7 @@ Master map of every CSS custom property in `tokens.css`.
 |---|---|---|
 | `--color-text-primary` | brand-black | Default body text |
 | `--color-text-secondary` | neutral-400 | Metadata, captions |
+| `--color-text-tertiary` | neutral-500 | Form labels, very-low-contrast meta |
 | `--color-text-placeholder` | black-25 | Photo placeholder initials |
 | `--color-text-nav` | black-80 | Sidebar nav resting |
 | `--color-text-muted-on-light` | black-50 | Label on green CTA |
@@ -83,7 +88,9 @@ Master map of every CSS custom property in `tokens.css`.
 |---|---|---|
 | `--color-border` | black-7 | Card borders |
 | `--color-border-subtle` | white-8 | Subtle border on dark |
-| `--color-divider` | black-7 | Table row separator |
+| `--color-border-strong` | neutral-400 | Outlined-button border |
+| `--color-divider` | black-7 | Soft table row separator |
+| `--color-divider-strong` | black-15 | Strong table row separator (NoteRow) |
 
 ### Surfaces & overlays
 | Variable | References | Description |
@@ -95,6 +102,7 @@ Master map of every CSS custom property in `tokens.css`.
 | `--color-surface-play` | white-95 | Play button circle |
 | `--color-surface-thumb` | black-40 | Video thumbnail overlay |
 | `--color-surface-scrim` | black-60 | Duration badge / lightbox |
+| `--color-surface-card` | neutral-800 | Card / badge background |
 
 ---
 
@@ -102,15 +110,19 @@ Master map of every CSS custom property in `tokens.css`.
 
 | Variable | Value |
 |---|---|
-| `--space-0` | `0px` |
-| `--space-1` | `4px` |
-| `--space-2` | `8px` |
-| `--space-3` | `12px` |
-| `--space-4` | `16px` |
-| `--space-5` | `20px` |
-| `--space-6` | `24px` |
-| `--space-7` | `32px` |
-| `--space-8` | `40px` |
+| `--space-0`  | `0px` |
+| `--space-1`  | `4px` |
+| `--space-2`  | `8px` |
+| `--space-3`  | `12px` |
+| `--space-4`  | `16px` |
+| `--space-5`  | `20px` |
+| `--space-6`  | `24px` |
+| `--space-7`  | `32px` |
+| `--space-8`  | `40px` |
+| `--space-9`  | `48px` |
+| `--space-10` | `64px` |
+| `--space-11` | `80px` |
+| `--space-12` | `96px` (section gap on home) |
 
 ---
 
@@ -118,30 +130,34 @@ Master map of every CSS custom property in `tokens.css`.
 
 | Variable | Value |
 |---|---|
-| `--font-heading` | `'Gramatika', sans-serif` |
-| `--font-body` | `'Gramatika', sans-serif` |
+| `--font-heading` | `'Nagel', sans-serif` |
+| `--font-body` | `'Nagel', sans-serif` |
 | `--font-weight-regular` | `400` |
+| `--font-weight-medium` | `500` |
 | `--text-hero-size` | `96px` |
-| `--text-hero-line` | `1` |
-| `--text-hero-track` | `-1.92px` |
+| `--text-hero-line` | `0.65` |
+| `--text-hero-track` | `-2.88px` |
+| `--text-headline-size` | `64px` |
+| `--text-headline-line` | `51.2px` (0.8 ratio) |
+| `--text-headline-track` | `-2.5px` |
 | `--text-display-size` | `44px` |
-| `--text-display-line` | `40px` |
-| `--text-display-track` | `-1.32px` |
+| `--text-display-line` | `44px` |
+| `--text-display-track` | `-1px` |
 | `--text-xl-size` | `36px` |
-| `--text-xl-line` | `32px` |
-| `--text-xl-track` | `-0.72px` |
+| `--text-xl-line` | `28.8px` |
+| `--text-xl-track` | `-1px` |
 | `--text-lg-size` | `24px` |
 | `--text-lg-line` | `32px` |
-| `--text-lg-track` | `-0.48px` |
+| `--text-lg-track` | `-1px` |
 | `--text-body-lg-size` | `18px` |
 | `--text-body-lg-line` | `27px` |
-| `--text-body-lg-track` | `-0.16px` |
+| `--text-body-lg-track` | `-0.6px` |
 | `--text-body-md-size` | `16px` |
 | `--text-body-md-line` | `20.8px` |
-| `--text-body-md-track` | `-0.16px` |
+| `--text-body-md-track` | `-0.4px` |
 | `--text-body-sm-size` | `14px` |
 | `--text-body-sm-line` | `21px` |
-| `--text-body-sm-track` | `-0.16px` |
+| `--text-body-sm-track` | `-0.2px` |
 
 ---
 

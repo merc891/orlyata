@@ -6,30 +6,27 @@
 - **Status:** Stable
 
 ## Overview
-Sheet music catalogue. White card with display heading, scrollable table of 20 pieces: №, title + icon, composer, voice badge, download link.
+Sheet-music download list. Header with title + view-all link, then a sequence of [NoteRow](NoteRow.md) molecules.
 
 ## Anatomy
 ```
-[.section white card]
-  [.sectionHeader: heading + "view all"]
-  [.table]
-    [.row × N: num | titleCell | composer | voice | download]
+.section (column, gap = --space-4)
+  .header
+    h2 .heading
+    a .viewAll
+  .list
+    NoteRow × N
 ```
-
-## Grid columns
-`40px 1fr 160px auto 32px` (structural — aligns track list)
 
 ## Tokens used (key)
 | Property | Token |
 |---|---|
-| Section bg | `--color-bg-default` |
-| Section border | `--color-border` |
-| Row height | 49px (structural) |
-| Row divider | `--color-divider` |
-| Voice badge bg | `--color-bg-muted` |
-| `color` (num, composer) | `--color-text-secondary` |
-| `color` (title) | `--color-text-primary` |
-| `transition` | `--transition-fast` |
+| Title-to-content gap | `--space-4` |
+| Heading `font-size` | `--text-display-size` |
+| Heading `font-weight` | `--font-weight-medium` |
+| Link `color` | `--color-text-primary` |
+| Link `transition` | `--transition-fast` |
 
 ## Cross-references
-- [Badge](Badge.md) — voice pill style
+- [NoteRow](NoteRow.md) — list item
+- [Tag](Tag.md) — used inside NoteRow for category

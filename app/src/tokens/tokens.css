@@ -20,6 +20,8 @@
   --color-neutral-white: #ffffff;
   --color-neutral-50:    #f4f4f5;
   --color-neutral-400:   #71717a;
+  --color-neutral-500:   #8f8f98;
+  --color-neutral-800:   #343635;
   --color-neutral-950:   #0a0a0a;
 
   /* Alpha — white on dark */
@@ -36,6 +38,8 @@
   /* Alpha — black on light */
   --color-black-5:   rgba(0,0,0,0.05);
   --color-black-7:   rgba(0,0,0,0.07);
+  --color-black-15:  rgba(0,0,0,0.15);
+  --color-black-20:  rgba(0,0,0,0.20);
   --color-black-25:  rgba(0,0,0,0.25);
   --color-black-40:  rgba(0,0,0,0.40);
   --color-black-50:  rgba(0,0,0,0.50);
@@ -45,15 +49,19 @@
   --color-black-80:  rgba(0,0,0,0.80);
 
   /* Spacing (4pt grid) */
-  --space-0: 0px;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-7: 32px;
-  --space-8: 40px;
+  --space-0:  0px;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  32px;
+  --space-8:  40px;
+  --space-9:  48px;
+  --space-10: 64px;
+  --space-11: 80px;
+  --space-12: 96px;
 
   /* Radius */
   --radius-sm:   10px;
@@ -82,6 +90,10 @@
   --text-hero-size:  96px;
   --text-hero-line:  0.65;
   --text-hero-track: -2.88px;
+
+  --text-headline-size:  64px;
+  --text-headline-line:  51.2px; /* 0.8 ratio */
+  --text-headline-track: -2.5px;
 
   --text-display-size:  44px;
   --text-display-line:  44px;
@@ -122,6 +134,7 @@
   /* Text — light surfaces */
   --color-text-primary:     var(--color-brand-black);
   --color-text-secondary:   var(--color-neutral-400);
+  --color-text-tertiary:    var(--color-neutral-500);
   --color-text-placeholder: var(--color-black-25);
   --color-text-nav:         var(--color-black-80);
 
@@ -141,9 +154,11 @@
   --color-accent: var(--color-brand-green);
 
   /* Borders & dividers */
-  --color-border:        var(--color-black-7);
-  --color-border-subtle: var(--color-white-8);
-  --color-divider:       var(--color-black-7);
+  --color-border:          var(--color-black-7);
+  --color-border-subtle:   var(--color-white-8);
+  --color-border-strong:   var(--color-neutral-400);
+  --color-divider:         var(--color-black-7);
+  --color-divider-strong:  var(--color-black-15);
 
   /* Surfaces & overlays */
   --color-surface-glass:       var(--color-white-8);
@@ -153,9 +168,14 @@
   --color-surface-play:        var(--color-white-95);
   --color-surface-thumb:       var(--color-black-40);
   --color-surface-scrim:       var(--color-black-60);
+  --color-surface-card:        var(--color-neutral-800);
 
   /* Composed transitions */
   --transition-fast: var(--duration-fast) var(--ease-default);
   --transition-base: var(--duration-base) var(--ease-default);
   --transition-slow: var(--duration-slow) var(--ease-default);
+
+  /* Blur */
+  --blur-glass: blur(12px);
+  --blur-glass-sm: blur(6px);
 }

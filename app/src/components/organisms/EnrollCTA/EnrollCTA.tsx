@@ -1,16 +1,35 @@
+import { FormEvent } from 'react';
 import styles from './EnrollCTA.module.css';
 import Button from '../../atoms/Button';
+import InputField from '../../atoms/InputField';
+import bg from '../../../assets/bg3.png';
 
 export default function EnrollCTA() {
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+  }
+
   return (
-    <section className={styles.cta}>
-      <div className={styles.left}>
-        <p className={styles.label}>Набор открыт</p>
-        <p className={styles.heading}>хотите вырастить<br />творческую личность?</p>
-      </div>
-      <div className={styles.right}>
-        <p className={styles.subtitle}>Запишите мальчика 5–17 лет в капеллу. Прослушивание не требуется.</p>
-        <Button variant="primary" href="#">Записаться ↗</Button>
+    <section className={styles.section}>
+      <h2 className={styles.heading}>
+        Хотите вырастить творческую личность —{' '}
+        запишите мальчика в&nbsp;капеллу
+      </h2>
+      <div
+        className={styles.banner}
+        style={{ backgroundImage: `url(${bg})` }}
+      >
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.fields}>
+            <InputField label="ФИО родителя" name="parent" placeholder="Семёнова Мария Павловна" />
+            <InputField label="ФИО ребёнка"   name="child"  placeholder="Семёнов Эдуард Алексеевич" />
+            <InputField label="Дата рождения" name="birth"  placeholder="16.02.2021" />
+            <InputField label="Телефон"       name="phone"  placeholder="+7 (926) 232-11-27" type="tel" />
+          </div>
+          <Button variant="primary">
+            отправить заявку <span aria-hidden="true">↗</span>
+          </Button>
+        </form>
       </div>
     </section>
   );

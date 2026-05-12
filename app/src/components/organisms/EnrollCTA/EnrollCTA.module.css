@@ -1,76 +1,77 @@
-.cta {
-  background: var(--color-accent);
-  border-radius: var(--radius-lg);
-  padding: var(--space-8);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-7);
-  align-items: end;
-  min-height: 240px;
-}
-
-.left {
+.section {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-7);
 }
 
-.label {
-  font-size: var(--text-body-sm-size);
-  line-height: var(--text-body-sm-line);
-  font-weight: var(--font-weight-regular);
-  color: var(--color-text-muted-on-light);
-}
-
+/* ── Centered heading ──────────────────────────────── */
 .heading {
+  margin: 0 auto;
+  max-width: 875px;
   font-family: var(--font-heading);
-  font-size: var(--text-xl-size);
-  line-height: var(--text-xl-line);
-  letter-spacing: var(--text-xl-track);
+  font-size: var(--text-headline-size);
+  line-height: var(--text-headline-line);
+  letter-spacing: var(--text-headline-track);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-primary);
+  text-align: center;
 }
 
-.right {
+/* ── Banner with bg image + centered form ──────────── */
+.banner {
+  position: relative;
+  height: 570px;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-muted);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Form card ─────────────────────────────────────── */
+.form {
+  width: 500px;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  justify-self: end;
-  align-items: flex-end;
+  align-items: stretch;
+  gap: var(--space-6);
+  padding: var(--space-7);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-lg);
 }
 
-.subtitle {
-  font-size: var(--text-body-md-size);
-  line-height: 1.5;
-  font-weight: var(--font-weight-regular);
-  color: var(--color-text-sub-on-light);
-  max-width: 320px;
-  text-align: right;
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
 }
 
-/* ─── Tablet 768–1279px ── */
+/* Button shrinks to its content (left-aligned) */
+.form > :last-child {
+  align-self: flex-start;
+}
+
+/* ── Tablet ≤ 1279 ─────────────────────────────────── */
 @media (max-width: 1279px) {
-  .cta {
-    padding: var(--space-7);
+  .heading {
+    max-width: 100%;
   }
 }
 
-/* ─── Mobile < 768px ── */
+/* ── Mobile < 768 ──────────────────────────────────── */
 @media (max-width: 767px) {
-  .cta {
-    grid-template-columns: 1fr;
-    padding: var(--space-5);
-    min-height: auto;
-    gap: var(--space-5);
+  .banner {
+    height: auto;
+    padding: var(--space-7) var(--space-5);
   }
-
-  .right {
-    justify-self: start;
-    align-items: flex-start;
+  .form {
+    width: 100%;
+    padding: var(--space-6);
   }
-
-  .subtitle {
-    text-align: left;
-    max-width: 100%;
+  .heading {
+    font-size: var(--text-xl-size);
   }
 }

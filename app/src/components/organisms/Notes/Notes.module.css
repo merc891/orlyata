@@ -55,7 +55,5 @@
   }
   .heading {
     font-size: var(--text-xl-size);
-    line-height: var(--text-xl-line);
-    letter-spacing: var(--text-xl-track);
   }
 }

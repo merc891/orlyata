@@ -87,36 +87,39 @@
   --font-weight-regular: 400;
   --font-weight-medium:  500;
 
+  /* Line-heights — unitless ratios. Стиль сохраняет ratio при смене font-size
+     в адаптиве (см. directives/responsive.md, правило #1). */
+
   --text-hero-size:  96px;
   --text-hero-line:  0.65;
   --text-hero-track: -2.88px;
 
   --text-headline-size:  64px;
-  --text-headline-line:  51.2px; /* 0.8 ratio */
+  --text-headline-line:  0.8;
   --text-headline-track: -2.5px;
 
   --text-display-size:  44px;
-  --text-display-line:  44px;
+  --text-display-line:  1;
   --text-display-track: -1px;
 
   --text-xl-size:  36px;
-  --text-xl-line:  28.8px;
+  --text-xl-line:  0.8;
   --text-xl-track: -1px;
 
   --text-lg-size:  24px;
-  --text-lg-line:  32px;
+  --text-lg-line:  1.333;
   --text-lg-track: -1px;
 
   --text-body-lg-size:  18px;
-  --text-body-lg-line:  27px;
+  --text-body-lg-line:  1.5;
   --text-body-lg-track: -0.6px;
 
   --text-body-md-size:  16px;
-  --text-body-md-line:  20.8px;
+  --text-body-md-line:  1.3;
   --text-body-md-track: -0.4px;
 
   --text-body-sm-size:  14px;
-  --text-body-sm-line:  21px;
+  --text-body-sm-line:  1.5;
   --text-body-sm-track: -0.2px;
 
   /* Shadow */

@@ -157,9 +157,8 @@
     gap: var(--space-6);
   }
   .lead {
-    font-size: var(--text-lg-size);
-    line-height: var(--text-lg-line);
-    letter-spacing: var(--text-lg-track);
+    /* Section-level prominence — matches other section headings on mobile (36px) */
+    font-size: var(--text-xl-size);
     overflow-wrap: anywhere;
   }
   .markRow {

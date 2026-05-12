@@ -84,7 +84,11 @@
 /* Mobile < 768 */
 @media (max-width: 767px) {
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+  /* titleCell — на всю ширину сверху, числовые cells идут сеткой 2×2 */
+  .titleCell {
+    grid-column: 1 / -1;
   }
   .titleCell,
   .cell {

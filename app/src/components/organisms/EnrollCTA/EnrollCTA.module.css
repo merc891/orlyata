@@ -72,6 +72,7 @@
     padding: var(--space-6);
   }
   .heading {
-    font-size: var(--text-xl-size);
+    /* Lead tier — between Hero brand (64px) and section headings (36px) */
+    font-size: var(--text-display-size);
   }
 }

@@ -40,6 +40,6 @@
 @media (max-width: 767px) {
   .main {
     padding: calc(60px + var(--space-5)) var(--space-4) var(--space-4);
-    gap: var(--space-8);
+    gap: var(--space-10);
   }
 }

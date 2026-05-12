@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, useId } from 'react';
+import { type InputHTMLAttributes, useId } from 'react';
 import styles from './InputField.module.css';
 
 interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {

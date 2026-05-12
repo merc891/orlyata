@@ -5,7 +5,7 @@ import Button from '../../atoms/Button';
 import styles from './Sidebar.module.css';
 import logo from '../../../assets/logo1.png';
 
-const NAV_LINKS = [
+const NAV_LINKS: { href: string; label: string; end?: boolean }[] = [
   { href: '/about',    label: 'о капелле' },
   { href: '/events',   label: 'события'   },
   { href: '/notes',    label: 'ноты'      },

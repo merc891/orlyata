@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { type FormEvent } from 'react';
 import styles from './EnrollCTA.module.css';
 import Button from '../../atoms/Button';
 import InputField from '../../atoms/InputField';

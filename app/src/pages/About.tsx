@@ -7,7 +7,6 @@ import {
   Teachers,
   AchievementsTeaser,
   Geography,
-  EnrollCTA,
   Repertoire,
   Relax,
   MediaSlider,

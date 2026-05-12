@@ -7,7 +7,7 @@ import About from './pages/About';
 export default function App() {
   return (
     <ReactLenis root>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/index2" element={<Dashboard2 />} />
